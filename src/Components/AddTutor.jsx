@@ -95,8 +95,8 @@ export class AddTutor extends Component {
             
 
       render() {
-        if (this.state.show) document.title = "Tutorly | Find a Local Tutor";
-        else document.title = "Tutorly"
+        if (this.state.show) document.title = "Tutorly | Create a Post";
+        else document.title = "Tutorly | Find a Local Tutor"
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
