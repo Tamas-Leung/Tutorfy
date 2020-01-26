@@ -84,7 +84,7 @@ export class Homepage extends Component {
                     <div className="col-lg-6">
                         <div style={{marginTop:'100px'}}>
                             <h1 className="mainTitle" style={{ marginLeft:'-10px'}}>Tutorfy</h1>
-                            <h3 className="subTitle" style={{marginTop:'-10px', marginLeft:'10px', fontWeight:' 00'}}>Find the best tutors in your McMaster University. We only supply the best of tutors! No one does it better than us, no one!</h3>
+                            <h3 className="subTitle" style={{marginTop:'-10px', marginLeft:'10px', fontWeight:' 00'}}>Struggling with school? We can help with finding the best tutors at your local campus. </h3>
                             </div>
                         </div>
                     

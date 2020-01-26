@@ -34,7 +34,7 @@ export class Navbar extends Component {
               </IconButton>
             </div>
                 <div style={{ flexGrow:'1'}}></div>
-                <p style={{ fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'23px', marginTop:'20px', marginRight:'10px'}} className='text-Navbar'>Want to add a Tutor?</p>
+                <p style={{ fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'23px', marginTop:'20px', marginRight:'10px'}} className='text-Navbar'>Are you a Tutor?</p>
                 <AddTutor/>
             </Toolbar>
             </AppBar>
