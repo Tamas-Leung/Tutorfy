@@ -60,8 +60,8 @@ export class AddTutor extends Component {
         image: '',
         university: '',
         phone: '',
-        price: ''
-
+        price: '',
+        name:''
         
     }
 
@@ -82,10 +82,11 @@ export class AddTutor extends Component {
                 progress: true,
                 })
             axios.post('https://tutorfy-dh6.herokuapp.com/addTutor',{
-
+                name  : this.state.name,  
                 email: this.state.email,
                 subject: this.state.subject,
                 courseName: this.state.courseName,
+                courseCode: this.state.courseCode,
                 credentials: this.state.credentials,
                 description: this.state.description,
                 image: this.state.image,
@@ -141,6 +142,18 @@ export class AddTutor extends Component {
                         InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
                         InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({courseName:event.target.value})}
+                    />
+                    <StyledTextField
+                        error={this.state.emptyEmail || !this.state.emailValid}
+                        margin="dense"
+                        id="name"
+                        label="Name"
+                        type="name"
+                        autoComplete="on"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({name:event.target.value})}
                     />
                     <StyledTextField
                         error={this.state.emptyEmail || !this.state.emailValid}
