@@ -24,8 +24,9 @@ export class Homepage extends Component {
           })
           .catch((error) => {
             console.error(error)
-          })
-      }
+        })
+        
+    }
 
       filter = (tutor) => {
         return  tutor.courseName.toLowerCase().includes(this.state.input.toLowerCase())
@@ -50,7 +51,7 @@ export class Homepage extends Component {
                 <Navbar input={this.state.input} update={(input)=>this.setState({input})}/>
                 <NewCourses input={this.state.input} update={(input)=>this.setState({input})}/>
                 <PopularItems input={this.state.input} update={(input)=>this.setState({input})}/>
-                <Results tutors={filteredData}/>
+                <Results input={this.state.input} tutors={filteredData}/>
             </div>
         )
     }

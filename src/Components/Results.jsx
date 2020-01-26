@@ -4,8 +4,14 @@ export class Results extends Component {
     render() {
         return (
             <div>
+                <h6 className="col-lg-10" style={{ paddingBottom:"30px", margin:"auto", fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'30px'}}>
+                    {
+                        this.props.input?
+                        "Tutors for \""+this.props.input+"\"":
+                        "Tutors"}
+                </h6>
                 {this.props.tutors.map((tutor, index) =>
-                <ResultCard tutor={tutor} key={index}/>
+                <ResultCard input={this.props.input} tutor={tutor} key={index}/>
                 )}
             </div>
         )
