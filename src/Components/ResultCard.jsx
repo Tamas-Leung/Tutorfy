@@ -47,7 +47,7 @@ export class ResultCard extends Component {
                         <div style={{ bottom: '0', position: 'relative'}}>
                                 <div style={{marginBottom: '10px'}}>
                                 <Rating name="half-rating" value={tutor.rating} precision={0.5} size="large"/>  
-                                    <Button style={{float: 'right', fontFamily: 'avenir, Nunito Sans, sans-serif', fontWeight: '700', fontSize:'20px'}} 
+                                    <Button style={{float: 'right', fontFamily: 'avenir, Nunito Sans, sans-serif', fontWeight: '700', fontSize:'20px', outline:'0'}} 
                                             startIcon={
                                                 <EmailIcon style={{color: "#5ba2ff", fontSize: 27, fontWeight: 900}}/> }>Send Email
                                             

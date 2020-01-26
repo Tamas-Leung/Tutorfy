@@ -5,6 +5,9 @@ import PopularItems from './PopularItems'
 import Results from './Results'
 import './App.css';
 import axios from 'axios'
+import {animateScroll as scroll} from 'react-scroll';
+
+
 export class Homepage extends Component {
     constructor(props){
         super(props);
@@ -69,6 +72,11 @@ export class Homepage extends Component {
                 tutor.subject.toLowerCase().includes(this.state.input.toLowerCase()) || 
                 tutor.name.toLowerCase().includes(this.state.input.toLowerCase()) ||
                 tutor.courseCode.toLowerCase().includes(this.state.input.toLowerCase())
+      }
+
+      componentDidUpdate(){
+        if(this.state.input!="")
+        scroll.scrollTo(1635);
       }
 
     render() {
