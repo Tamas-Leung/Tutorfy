@@ -16,7 +16,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core/styles';
-
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
 
 const StyledBar = withStyles({
 root: {
@@ -42,16 +43,26 @@ const StyledTextField = withStyles({
 
 export class AddTutor extends Component {
     state={
-      snackSuccess: false,
-      snackError: false,
-      emailValid: true,
-      emptyEmail: false,
-      emptyProduct: false,
-      show: false,
-      progress: false,
-      error: false,
-      product: '',
-      email: ''
+        snackSuccess: false,
+        snackError: false,
+        emailValid: true,
+        emptyEmail: false,
+        emptyProduct: false,
+        show: false,
+        progress: false,
+        error: false,
+        email: '',
+        subject: '',
+        courseName: '',
+        credentials: '',
+        courseCode: '',
+        description: '',
+        image: '',
+        university: '',
+        phone: '',
+        price: ''
+
+        
     }
 
     submit (){
@@ -70,9 +81,19 @@ export class AddTutor extends Component {
                 show: false,
                 progress: true,
                 })
-            axios.post('https://pricewatch-antonk.herokuapp.com/addProduct',{
-                title: this.state.product,
-                email: this.state.email
+            axios.post('https://tutorfy-dh6.herokuapp.com/addTutor',{
+
+                email: this.state.email,
+                subject: this.state.subject,
+                courseName: this.state.courseName,
+                credentials: this.state.credentials,
+                description: this.state.description,
+                image: this.state.image,
+                university: this.state.university,
+                phone: this.state.phone,
+                price: this.state.price,
+                rating: 0,
+                numberOfRatings: 0
             })
             .then(res => {
                 this.setState({
@@ -95,29 +116,36 @@ export class AddTutor extends Component {
             
 
       render() {
+<<<<<<< HEAD
+        var unis = ["University of Toronto", "McMaster University"]
+
+        if (this.state.show) document.title = "Price Watch | Add Product";
+        else document.title = "Price Watch"
+=======
         if (this.state.show) document.title = "Tutorly | Create a Post";
         else document.title = "Tutorly | Find a Local Tutor"
+>>>>>>> 68a0fcf17f464f54cf1f4a4bfd74c415906ef788
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
                 <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add A Course Listing</DialogTitle>
                 <DialogContent>
                     <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
-                        Add a Course listing down below Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi inventore delectus quod facilis explicabo excepturi architecto, aspernatur autem quisquam non qui molestiae animi vitae iste commodi asperiores fuga maxime expedita!
+                        Add a Course listing down below!
                     </DialogContentText>
                     <StyledTextField
                         autoFocus
                         error={this.state.emptyProduct}
                         helperText={this.state.emptyProduct?"Enter Course Name":""}
                         margin="dense"
-                        id="item"
+                        id="courseName"
                         label="Course Name"
                         type="course"
                         autoComplete="off"
                         fullWidth
                         InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
                         InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
-                        onChange = {(event) => this.setState({product:event.target.value})}
+                        onChange = {(event) => this.setState({courseName:event.target.value})}
                     />
                     <StyledTextField
                         error={this.state.emptyEmail || !this.state.emailValid}
@@ -131,6 +159,118 @@ export class AddTutor extends Component {
                         InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500} }} 
                         InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({email:event.target.value})}
+                    />
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Phone Number":""}
+                        margin="dense"
+                        id="phone"
+                        label="Phone"
+                        type="course"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({phone:event.target.value})}
+                    />
+                    <div >
+                        <InputLabel id="demo-simple-select-label">Subject</InputLabel>
+                        <Select style={{ display:"inline-block", width:"180px"}}
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={this.subject}
+                            onChange={(event) => this.setState({subject : event.target.value})}
+                            >
+                            <option value={"Math"}>Math</option>
+                            <option value={"Engineering"}>Engineering</option>
+                            <option value={"Biology"}>Biology</option>
+                            <option value={"Chemistry"}>Chemistry</option>
+                            <option value={"Physics"}>Physics</option>
+                            <option value={"Art"}>Art</option>
+                            <option value={"Business"}>Business</option>
+                            <option value={"Computer Science"}>Computer Science</option>
+                        </Select>
+                        <StyledTextField style={{display:"inline-block"}}
+                            autoFocus
+                            error={this.state.emptyProduct}
+                            helperText={this.state.emptyProduct?"Enter Course Code":""}
+                            margin="dense"
+                            id="courseCode"
+                            label="Course Code"
+                            type="course"
+                            autoComplete="off"
+                            fullWidth
+                            InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                            InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                            onChange = {(event) => this.setState({courseCode:event.target.value})}
+                        />
+                    </div>
+                    
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Credentials":""}
+                        margin="dense"
+                        id="credentials"
+                        label="Credentials"
+                        type="credentials"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({credentials:event.target.value})}
+                    />
+                    <InputLabel id="demo-simple-select-label">University</InputLabel>
+                    <Select style={{width:"180px"}}
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={this.subject}
+                        onChange={(event) => this.setState({university : event.target.value})}
+                    >
+                        {unis.map((uni,index) => <option value={uni}>{uni}</option>)}
+                    </Select>
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Description":""}
+                        margin="dense"
+                        id="description"
+                        label="Description"
+                        type="description"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({description:event.target.value})}
+                    />
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Image":""}
+                        margin="dense"
+                        id="image"
+                        label="Image"
+                        type="text"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({image:event.target.value})}
+                    />
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Price":""}
+                        margin="dense"
+                        id="price"
+                        label="Price"
+                        type="price"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({price:event.target.value})}
                     />
                 </DialogContent>
                 <DialogActions>
