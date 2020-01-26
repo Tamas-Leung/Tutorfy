@@ -18,7 +18,8 @@ export class Navbar extends Component {
         return (
             <AppBar position="fixed" style={{ background: "#5ba2ff", height:"70px",}}>
             <Toolbar>
-                <img src="assets/tutorfy.png" style={{height:'55px', marginRight:'7px', marginTop:'5px'}}></img>
+              <a style={{cursor:'pointer'}}onClick={()=>this.props.update('')}>
+                <img src="assets/tutorfy.png" style={{height:'55px', marginRight:'7px', marginTop:'5px'}}></img></a>
                 <h6 style={{ fontSize:'30px',  fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', marginRight:'40px', marginTop:'10px'}}>Tutorfy</h6>
                 <div className="searchBar" >
               <InputBase
