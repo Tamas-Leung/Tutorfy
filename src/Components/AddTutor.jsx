@@ -117,7 +117,9 @@ export class AddTutor extends Component {
             
 
       render() {
-        var unis = ["University of Toronto", "McMaster University"]
+        var unis = ["University of Toronto", "McMaster University", "University of Windsor",
+                     "University of Waterloo", "York University", "Wilfrid Laurier University",
+                      "Ryerson University", "University of Western Ontario", "University of Ottawa" ]
 
         if (this.state.show) document.title = "Tutorly | Create a Post";
         else document.title = "Tutorly | Find a Local Tutor"
@@ -132,10 +134,10 @@ export class AddTutor extends Component {
                     <StyledTextField
                         autoFocus
                         error={this.state.emptyProduct}
-                        helperText={this.state.emptyProduct?"Enter Course Name":""}
+                        helperText={this.state.emptyProduct?"Enter Post Title":""}
                         margin="dense"
                         id="courseName"
-                        label="Course Name"
+                        label="Post Title"
                         type="course"
                         autoComplete="off"
                         fullWidth
@@ -272,7 +274,7 @@ export class AddTutor extends Component {
                         helperText={this.state.emptyProduct?"Enter Price":""}
                         margin="dense"
                         id="price"
-                        label="Price"
+                        label="Price (Hourly Rate)"
                         type="price"
                         autoComplete="off"
                         fullWidth
@@ -323,7 +325,7 @@ export class AddTutor extends Component {
                 open={this.state.snackSuccess}
                 >
                 <SnackbarContent style={{backgroundColor:'rgb(80, 209, 0)',fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', fontSize: 16}}
-                message="Success, Product was added"
+                message="Success, Posting was added"
                 action={ <IconButton
                     key="close"
                     aria-label="close"
@@ -340,7 +342,7 @@ export class AddTutor extends Component {
                 open={this.state.snackError}
                 >
                 <SnackbarContent style={{backgroundColor:'red',fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', fontSize: 16}}
-                message={"Error, Product was not added"}
+                message={"Error, Posting was not added"}
                 action={ <IconButton
                     key="close"
                     aria-label="close"
