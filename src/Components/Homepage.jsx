@@ -65,11 +65,15 @@ export class Homepage extends Component {
     }
 
       filter = (tutor) => {
-        return  tutor.courseName.toLowerCase().includes(this.state.input.toLowerCase())
+        return  tutor.courseName.toLowerCase().includes(this.state.input.toLowerCase()) ||
+                tutor.subject.toLowerCase().includes(this.state.input.toLowerCase()) || 
+                tutor.name.toLowerCase().includes(this.state.input.toLowerCase()) ||
+                tutor.courseCode.toLowerCase().includes(this.state.input.toLowerCase())
       }
 
     render() {
-        var filteredData = this.data.filter(this.filter)
+        var filteredData = this.data.
+        filter(this.filter)
         return (
             <div style={{marginTop:'7.5%'}}>
                 <div className="col-lg-10 row" style={{margin:'auto'}}>

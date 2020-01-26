@@ -103,7 +103,7 @@ export class AddTutor extends Component {
                 <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add A Course Listing</DialogTitle>
                 <DialogContent>
                     <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
-                        Add a Course listing down below Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi inventore delectus quod facilis explicabo excepturi architecto, aspernatur autem quisquam non qui molestiae animi vitae iste commodi asperiores fuga maxime expedita!
+                        Add a Course listing down below!
                     </DialogContentText>
                     <StyledTextField
                         autoFocus
@@ -131,6 +131,34 @@ export class AddTutor extends Component {
                         InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500} }} 
                         InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({email:event.target.value})}
+                    />
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Course Name":""}
+                        margin="dense"
+                        id="phone"
+                        label="Phone Number"
+                        type="number"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({product:event.target.value})}
+                    />
+                    <StyledTextField
+                        autoFocus
+                        error={this.state.emptyProduct}
+                        helperText={this.state.emptyProduct?"Enter Course Name":""}
+                        margin="dense"
+                        id="item"
+                        label="Course Name"
+                        type="course"
+                        autoComplete="off"
+                        fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
+                        onChange = {(event) => this.setState({product:event.target.value})}
                     />
                 </DialogContent>
                 <DialogActions>
