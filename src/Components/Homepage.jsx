@@ -73,7 +73,7 @@ export class Homepage extends Component {
 
       componentDidUpdate(){
         if(this.state.input!="")
-        scroll.scrollTo(1635);
+        scroll.scrollTo(1645);
       }
 
     render() {
