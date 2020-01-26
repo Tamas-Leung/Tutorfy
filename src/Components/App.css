@@ -49,3 +49,10 @@
     font-weight:300;
     height:40px;
   }
+  .resultCard{
+    transition: 0.25s;
+    margin-bottom: 45px;
+  }
+  .resultCard:hover{
+    transform: scale(1.02);
+  }

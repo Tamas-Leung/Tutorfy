@@ -4,6 +4,7 @@ export class ResultCard extends Component {
     render() {
         var tutor = this.props.tutor
         return (
+            <div className="resultCard">
             <div className="col-8 container" style={{marginBottom:"25px", background:"white", borderRadius:'15px'}}>
                 <div className="row" style={{fontFamily:'Avenir, sans-serif'}}>
                     <div className="col-3">
@@ -12,16 +13,16 @@ export class ResultCard extends Component {
                         </div>
                     </div>
                     <div className="col-9 row" style={{padding:'0px'}}>
-                        <div className="col-9" style={{fontSize:'27px', fontWeight:'900'}}>
+                        <h4 style={{fontSize:'27px', fontWeight:'900', display:"inline-block"}}>
                             {tutor.courseName}
-                        </div>
-                        <div className="col-3" style={{color: "#5ba2ff", fontSize:'27px', fontWeight:'100', float:"right"}}>
+                        </h4>
+                            <h4 style={{background:'#5ba2ff',padding:'10px',  margin:'auto',  display:"inline-block",float:'right', marginTop:'-10px', marginRight:'-25px', color:'white'}}>
                             ${tutor.price}/hr
-                        </div>
+                            </h4>
                     </div>
                     
                 </div>
-               
+                </div>
             </div>
         )
     }
