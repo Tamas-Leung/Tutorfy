@@ -9,6 +9,7 @@ export class Homepage extends Component {
         input:''
     }
     render() {
+        
         return (
             <div style={{marginTop:'7.5%'}}>
                 <div className="col-lg-10 row" style={{margin:'auto'}}>
@@ -26,7 +27,7 @@ export class Homepage extends Component {
                 <Navbar input={this.state.input} update={(input)=>this.setState({input})}/>
                 <NewCourses input={this.state.input} update={(input)=>this.setState({input})}/>
                 <PopularItems input={this.state.input} update={(input)=>this.setState({input})}/>
-                {console.log(this.state.input)}
+        {console.log(this.state.input)}
                 <Results/>
             </div>
         )

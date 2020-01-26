@@ -14,7 +14,7 @@ export class NewCourses extends Component {
                 <div className="row">
                 {
                     courses.map((course, index) => 
-                        <div className="col-lg-4" style={{textAlign:'center', cursor:'pointer'}} onClick={(input)=>{this.setState({input}); this.props.update(course)}}>
+                        <div className="col-lg-4" style={{textAlign:'center', cursor:'pointer'}} onClick={()=>{this.props.update(course)}}>
                            <div style={{height:'240px'}}>
                                 <img className="resultCardImg" src={"assets/math.jpeg"} style={{height:'240px' ,paddingBottom:'0px',objectFit: 'cover', opacity:'1',background:"rgba(0,0,0,1)", borderRadius:'15px'}} alt=""></img>
                             </div>
