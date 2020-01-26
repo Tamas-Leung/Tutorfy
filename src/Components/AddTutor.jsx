@@ -116,10 +116,15 @@ export class AddTutor extends Component {
             
 
       render() {
+<<<<<<< HEAD
         var unis = ["University of Toronto", "McMaster University"]
 
         if (this.state.show) document.title = "Price Watch | Add Product";
         else document.title = "Price Watch"
+=======
+        if (this.state.show) document.title = "Tutorly | Create a Post";
+        else document.title = "Tutorly | Find a Local Tutor"
+>>>>>>> 68a0fcf17f464f54cf1f4a4bfd74c415906ef788
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
@@ -282,7 +287,7 @@ export class AddTutor extends Component {
                 </DialogActions>
             </Dialog>
             <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#5185ed', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'23px', padding:'0px 25px 0px 25px', color:'white', outline:'0'}} 
-            onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Tutor</Button>
+            onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add a Post</Button>
             <Snackbar
                 style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900'}}
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
