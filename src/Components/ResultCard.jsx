@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
 import Rating from '@material-ui/lab/Rating';
+import EmailIcon from '@material-ui/icons/Email';
 import AOS from 'aos';
 AOS.init();
 
@@ -17,6 +19,7 @@ export class ResultCard extends Component {
                         <div style={{height:'24 0px'}}>
                             <h4 style={{position:'absolute', background:'#5ba2ff',padding:'10px',  margin:'auto', float:'left', marginTop:'-10px', marginLeft:'-20px', color:'white'}}>
                                 ${tutor.price}/hr
+
                             </h4>
                             <img className="resultCardImg" src={tutor.image} style={{height:'240px' ,paddingBottom:'0px',objectFit: 'cover', opacity:'1',background:"rgba(0,0,0,1)", borderRadius:'15px'}} alt=""></img>
                         </div>
@@ -25,6 +28,7 @@ export class ResultCard extends Component {
                         <div className="row">
                         <h4 style={{marginLeft:'20px', fontSize:'33px', fontWeight:'900', display:"inline-block"}}>
                             {tutor.courseName}
+                            <Chip label={tutor.courseCode} style={{marginLeft:'10px', fontSize:'23px', padding:'10px 10px 10px 10px'}}/>
                         </h4>
                         
                             
@@ -34,12 +38,22 @@ export class ResultCard extends Component {
                             {tutor.name}
                         </h4></div>
 
-                         
-
-                        <div style={{padding:'0px', position:'absolute', bottom:'0', width:'100%'}}>
+{/* 
+                        <div style={{padding:'0px', position:'absolute', bottom:'0', width:'100%', marginTop:'-20px'}}>
                             <Rating name="half-rating" value={tutor.rating} precision={0.5} size="large"/>  
                             <Button variant="contained" color="primary" style={{ float:'right', fontFamily:'Avenir, sans-serif', fontSize:'20px'}}>Send Email</Button>
-                        </div>
+                        </div> */}
+
+                        <div style={{ bottom: '0', position: 'relative'}}>
+                                <div style={{marginBottom: '10px'}}>
+                                <Rating name="half-rating" value={tutor.rating} precision={0.5} size="large"/>  
+                                    <Button style={{float: 'right', fontFamily: 'avenir, Nunito Sans, sans-serif', fontWeight: '700', fontSize:'20px'}} 
+                                            startIcon={
+                                                <EmailIcon style={{color: "#5ba2ff", fontSize: 27, fontWeight: 900}}/> }>Send Email
+                                            
+                                    </Button>
+                                </div>
+                            </div>
 
                     </div>
                     
