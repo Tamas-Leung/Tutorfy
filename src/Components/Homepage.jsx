@@ -4,12 +4,30 @@ import NewCourses from './NewCourses'
 import PopularItems from './PopularItems'
 import Results from './Results'
 import './App.css';
+import axios from 'axios'
 export class Homepage extends Component {
+    constructor(props){
+        super(props);
+        this.data=[]
+    }
     state={
         input:''
     }
+
+    componentDidMount(){
+        axios.get('https://tutorfy-dh6.herokuapp.com/getTutor')
+          .then((data) => {
+            this.data = data.data
+            this.setState({
+              response:true
+            });
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+      }
     render() {
-        
+        var filteredData = this.data
         return (
             <div style={{marginTop:'7.5%'}}>
                 <div className="col-lg-10 row" style={{margin:'auto'}}>
@@ -27,8 +45,7 @@ export class Homepage extends Component {
                 <Navbar input={this.state.input} update={(input)=>this.setState({input})}/>
                 <NewCourses input={this.state.input} update={(input)=>this.setState({input})}/>
                 <PopularItems input={this.state.input} update={(input)=>this.setState({input})}/>
-        {console.log(this.state.input)}
-                <Results/>
+                <Results tutors={filteredData}/>
             </div>
         )
     }
