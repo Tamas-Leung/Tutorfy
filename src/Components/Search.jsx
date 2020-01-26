@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 
 export class Search extends Component {
     state={
-        textField:''
+        input:''
     }
     render() {
         var placeholder = "Search for Tutors"
@@ -19,7 +19,7 @@ export class Search extends Component {
                 style={{paddingLeft: 10, fontFamily: 'avenir, Nunito Sans, sans-serif', fontSize: '23px', flexGrow:1, color:'white'}}
                 placeholder={placeholder}
                 inputProps={{ 'aria-label': 'search google maps' }}
-                onChange={(event)=>this.setState({textField:event.target.value})}
+                onChange={(event)=>this.props.update(event.target.value)}
               />
               <Divider orientation="vertical" style={{height:'30px', marginRight:'5px', background:'white'}} />
               <IconButton type="submit" aria-label="search">

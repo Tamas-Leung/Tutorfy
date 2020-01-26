@@ -3,6 +3,9 @@ import PopTutor from './PopTutor'
 import PopCourse from './PopCourse'
 
 export class PopularItems extends Component {
+    state={
+        input:''
+    }
     render() {
         var courses = ["math","science","chemistry","physics","magnetics","computer"]
         var tutors = ["math","science","chemistry","physics","magnetics","computer"]

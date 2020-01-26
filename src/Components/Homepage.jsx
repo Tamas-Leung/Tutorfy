@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import Navbar from './Navbar'
 import NewCourses from './NewCourses'
 import PopularItems from './PopularItems'
-
+import Results from './Results'
 import './App.css';
 export class Homepage extends Component {
+    state={
+        input:''
+    }
     render() {
         return (
             <div style={{marginTop:'7.5%'}}>
@@ -20,9 +23,11 @@ export class Homepage extends Component {
                         <img src="assets/tutorfy-banner.svg" style={{height:'500px'}}></img>
                     </div>
                 </div>
-                <Navbar/>
-                <NewCourses/>
-                <PopularItems/>
+                <Navbar input={this.state.input} update={(input)=>this.setState({input})}/>
+                <NewCourses input={this.state.input} update={(input)=>this.setState({input})}/>
+                <PopularItems input={this.state.input} update={(input)=>this.setState({input})}/>
+                {console.log(this.state.input)}
+                <Results/>
             </div>
         )
     }
