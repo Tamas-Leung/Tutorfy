@@ -32,10 +32,10 @@ bar: {
 const StyledTextField = withStyles({
     root: {
         '& label.Mui-focused': {
-        color: '#FEBD69',
+        color: '#4797ff',
         },
         '& .MuiInput-underline:after': {
-        borderBottomColor: '#FEBD69',
+        borderBottomColor: '#4797ff',
         }
     }
 })(TextField);
@@ -100,19 +100,19 @@ export class AddTutor extends Component {
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
-                <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add Your Own Product</DialogTitle>
+                <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add A Course Listing</DialogTitle>
                 <DialogContent>
                     <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
-                        To add a product to watch enter the Amazon URL or name of the product and your Email down below. When the product's price changes by 5% you will receive an email.
+                        Add a Course listing down below Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi inventore delectus quod facilis explicabo excepturi architecto, aspernatur autem quisquam non qui molestiae animi vitae iste commodi asperiores fuga maxime expedita!
                     </DialogContentText>
                     <StyledTextField
                         autoFocus
                         error={this.state.emptyProduct}
-                        helperText={this.state.emptyProduct?"Enter Product URL or Name":""}
+                        helperText={this.state.emptyProduct?"Enter Course Name":""}
                         margin="dense"
                         id="item"
-                        label="Product URL or Name"
-                        type="product"
+                        label="Course Name"
+                        type="course"
                         autoComplete="off"
                         fullWidth
                         InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
