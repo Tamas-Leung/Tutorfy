@@ -28,7 +28,6 @@ export class ResultCard extends Component {
                         <div className="row">
                         <h4 style={{marginLeft:'20px', fontSize:'33px', fontWeight:'900', display:"inline-block"}}>
                             {tutor.courseName}
-                            <Chip label={tutor.courseCode} style={{marginLeft:'10px', fontSize:'23px', padding:'10px 10px 10px 10px'}}/>
                         </h4>
                         
                             
@@ -37,8 +36,9 @@ export class ResultCard extends Component {
                             <h4 style={{marginLeft:'20px', fontSize:'27px', fontWeight:'700', display:"inherit"}}>
                             {tutor.name}
                         </h4></div>
-
-{/* 
+                        <Rating name="half-rating" value={tutor.rating} precision={0.5} size="large" style={{display:'inline-block'}}/>
+                        <h4 style={{display:'inline-block'}}>{"("+tutor.numberOfRatings+")"}</h4>  
+{/*         
                         <div style={{padding:'0px', position:'absolute', bottom:'0', width:'100%', marginTop:'-20px'}}>
                             <Rating name="half-rating" value={tutor.rating} precision={0.5} size="large"/>  
                             <Button variant="contained" color="primary" style={{ float:'right', fontFamily:'Avenir, sans-serif', fontSize:'20px'}}>Send Email</Button>
@@ -46,8 +46,9 @@ export class ResultCard extends Component {
 
                         <div style={{ bottom: '0', position: 'relative'}}>
                                 <div style={{marginBottom: '10px'}}>
-                                <Rating name="half-rating" value={tutor.rating} precision={0.5} size="large"/>  
-                                    <Button style={{float: 'right', fontFamily: 'avenir, Nunito Sans, sans-serif', fontWeight: '700', fontSize:'20px', outline:'0'}} 
+                                <Chip label={tutor.courseCode} style={{marginLeft:'10px', fontSize:'23px', padding:'10px 10px 10px 10px', fontWeight:700}}/>
+                                <Chip label={tutor.university} style={{marginLeft:'10px', fontSize:'23px', padding:'10px 10px 10px 10px',fontWeight:700}}/>
+                                    <Button style={{float: 'right', fontFamily: 'avenir, Nunito Sans, sans-serif', fontSize:'30px',fontWeight: '900', fontSize:'20px', outline:'0'}} 
                                             startIcon={
                                                 <EmailIcon style={{color: "#5ba2ff", fontSize: 27, fontWeight: 900}}/> }>Send Email
                                             
