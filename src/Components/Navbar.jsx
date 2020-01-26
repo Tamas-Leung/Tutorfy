@@ -8,7 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from 'axios';
-import AOS from 'aos';
+
 export class Navbar extends Component {
     state={
         input:''

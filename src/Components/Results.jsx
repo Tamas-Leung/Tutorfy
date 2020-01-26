@@ -5,7 +5,7 @@ export class Results extends Component {
         return (
             <div>
                 {this.props.tutors.map((tutor, index) =>
-                <ResultCard tutor={tutor}/>
+                <ResultCard tutor={tutor} key={index}/>
                 )}
             </div>
         )
