@@ -26,8 +26,13 @@ export class Homepage extends Component {
             console.error(error)
           })
       }
+
+      filter = (tutor) => {
+        return  tutor.courseName.toLowerCase().includes(this.state.input.toLowerCase())
+      }
+
     render() {
-        var filteredData = this.data
+        var filteredData = this.data.filter(this.filter)
         return (
             <div style={{marginTop:'7.5%'}}>
                 <div className="col-lg-10 row" style={{margin:'auto'}}>
