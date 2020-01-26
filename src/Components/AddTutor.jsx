@@ -116,15 +116,10 @@ export class AddTutor extends Component {
             
 
       render() {
-<<<<<<< HEAD
         var unis = ["University of Toronto", "McMaster University"]
 
-        if (this.state.show) document.title = "Price Watch | Add Product";
-        else document.title = "Price Watch"
-=======
         if (this.state.show) document.title = "Tutorly | Create a Post";
         else document.title = "Tutorly | Find a Local Tutor"
->>>>>>> 68a0fcf17f464f54cf1f4a4bfd74c415906ef788
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
