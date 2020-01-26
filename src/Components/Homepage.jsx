@@ -9,6 +9,9 @@ export class Homepage extends Component {
     constructor(props){
         super(props);
         this.data=[]
+        this.popCourse=[]
+        this.popSubject=[]
+        this.newCourse=[]
     }
     state={
         input:''
@@ -18,6 +21,39 @@ export class Homepage extends Component {
         axios.get('https://tutorfy-dh6.herokuapp.com/getTutor')
           .then((data) => {
             this.data = data.data
+            this.setState({
+              response:true
+            });
+          })
+          .catch((error) => {
+            console.error(error)
+        })
+
+        axios.get('https://tutorfy-dh6.herokuapp.com/getPopularCourses')
+          .then((response) => {
+            this.popCourse = response.data
+            this.setState({
+              response:true
+            });
+          })
+          .catch((error) => {
+            console.error(error)
+        })
+
+        axios.get('https://tutorfy-dh6.herokuapp.com/getPopularSubjects')
+          .then((response) => {
+            this.popSubject = response.data
+            this.setState({
+              response:true
+            });
+          })
+          .catch((error) => {
+            console.error(error)
+        })
+
+        axios.get('https://tutorfy-dh6.herokuapp.com/getLatestSubjects')
+          .then((response) => {
+            this.newCourse = response.data
             this.setState({
               response:true
             });
@@ -49,8 +85,8 @@ export class Homepage extends Component {
                     </div>
                 </div>
                 <Navbar input={this.state.input} update={(input)=>this.setState({input})}/>
-                <NewCourses input={this.state.input} update={(input)=>this.setState({input})}/>
-                <PopularItems input={this.state.input} update={(input)=>this.setState({input})}/>
+                <NewCourses input={this.state.input} info={this.newCourse} update={(input)=>this.setState({input})}/>
+                <PopularItems input={this.state.input} popCourse={this.popCourse} popSubject={this.popSubject} update={(input)=>this.setState({input})}/>
                 <Results input={this.state.input} tutors={filteredData}/>
             </div>
         )
