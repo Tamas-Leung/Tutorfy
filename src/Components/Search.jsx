@@ -21,7 +21,7 @@ export class Search extends Component {
                 inputProps={{ 'aria-label': 'search google maps' }}
                 onChange={(event)=>this.setState({textField:event.target.value})}
               />
-              <Divider orientation="vertical" style={{height:'45px', marginRight:'5px', background:'white'}} />
+              <Divider orientation="vertical" style={{height:'30px', marginRight:'5px', background:'white'}} />
               <IconButton type="submit" aria-label="search">
                 <SearchIcon style={{color:'white'}}/>
               </IconButton>
